@@ -13,7 +13,7 @@ async function checkURL() {
     resultContainer.className = ""; 
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/predict', {
+        const response = await fetch('https://phishing-url-detector-hzuz.onrender.com/predict', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url: urlInput })
@@ -76,7 +76,7 @@ async function uploadCSVFile(event) {
     formData.append('file', selectedFile);
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/bulk-scan', {
+        const response = await fetch('https://phishing-url-detector-hzuz.onrender.com/bulk-scan', {
             method: 'POST',
             body: formData
         });
