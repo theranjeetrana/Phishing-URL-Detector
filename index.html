@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="glow-orb" id="orb1"></div>
+    <div class="glow-orb" id="orb2"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo-area">
+                <i class="fa-solid fa-shield-halved security-shield"></i>
+                <h1>PHISHING<span>URL</span>DETECTOR</h1>
+            </div>
+            <p class="tagline">Next-Generation Hybrid Phishing Analysis Engine</p>
+        </header>
+        
+        <main>
+            <div class="input-box-wrapper">
+                <div class="input-box">
+                    <i class="fa-solid fa-globe globe-icon"></i>
+                    <input type="text" id="urlInput" placeholder="Enter or paste suspicious URL path here...">
+                    <div role="button" style="cursor: pointer; user-select: none;" class="custom-scan-btn" onclick="checkURL()">Analyze Link</div>
+                </div>
+            </div>
+
+            <div id="resultContainer" class="hidden"></div>
+
+            <div class="bulk-upload-wrapper">
+                <div class="bulk-header">
+                    <i class="fa-solid fa-server enterprise-icon"></i>
+                    <h3>Enterprise Bulk Log Scanner (.CSV / .TXT)</h3>
+                </div>
+                <div class="upload-area" onclick="document.getElementById('csvFileInput').click()">
+                    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                    <p id="uploadStatusText">Click to select threat log CSV or TXT file here</p>
+                    <input type="file" id="csvFileInput" accept=".csv, .txt" style="display:none;" onchange="handleFileSelect(event)">
+                </div>
+                
+                <div id="bulkScanBtn" class="bulk-btn hidden" style="cursor: pointer; text-align: center; display: flex; justify-content: center; align-items: center; user-select: none;" onclick="uploadCSVFile(event)">
+                    <i class="fa-solid fa-play" style="margin-right: 8px;"></i> Run Enterprise Batch Scan
+                </div>
+                
+                <div id="bulkResultContainer" class="bulk-results hidden"></div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>235K+</h3>
+                    <p>Dataset Base</p>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>&lt; 200ms</h3>
+                    <p>Analysis Speed</p>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>98.4%</h3>
+                    <p>Model Precision</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Ramgovind Institute of Technology • CSE Department Final Year </p>
+        </footer>
+    </div>
+    
+    <script src="script.js?v=final_lock"></script>
+</body>
+</html>
